@@ -1,0 +1,9 @@
+{
+  "title": "Interactive flare viewer",
+  "body": [
+    "uses DONKI flare database and pulls from SDO for the magnetogram, the orange sphere shows the active region of the current flare",
+    "webpage made by Vivian Eagar"
+  ],
+  "latestLabel": "",
+  "latestUrl": ""
+}
