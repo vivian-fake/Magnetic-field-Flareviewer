@@ -1,6 +1,6 @@
 // im just going to convert to javascript because it makes things easier ok
 
-const response = await fetch("./FLRDATA.json");
+const response = await fetch("FLRDATA.json");
 const jsonData = await response.json();
         
 const basetime= jsonData[jsonData.length - 1].submissionTime;
