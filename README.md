@@ -7,9 +7,11 @@ The [Space Weather Flare Viewer website](https://n3.sonoma.edu/flareviewer/) was
 
 images may take time to load so if the image isnt updating click one of the controls to cause it to reload
 
-controls: the side menu allows you to edit the 3D model. The flare ID box displays the flare currently being viewed, this ID contains the date of the event. The ID's are the ones assigned within the DONKI database. If you dont want to search for direct ID's you can use the next and back buttons to cycle to the flare before or after the one you have currently selected. Displacement scale will change the intensity of the bumps on the sphere, click and drag the box to change it or type a value. Checking the box show previous active region will show a yellow sphere where the previous flare's active region was.
+## Controls
+The side menu allows you to edit the 3D model. The "flare ID" box displays the flare currently being viewed, this ID contains the date of the event. The ID's are the ones assigned within the DONKI database. If you dont want to search for direct ID's you can use the "next","back", or "latest" buttons to cycle to the flare before or after the one you have currently selected. "Displacement scale" will change the intensity of the bumps on the sphere, type a value in the box to change it. Checking the box "show previous active region" will show a yellow sphere where the previous flare's active region was.
 
-click the help button to open and close this menu
+## Code Info
+The project uses React aswell as Three, Leva, and Temporal. It was built with Vite and Node. All of the main site content is in App.jsx. Update.js is how the site stays updated to the latest data and FLRDATA.json is where the data is stored. The only backend is redirecting links to avoid CORS issues.
 
 webpage made by Vivian Eagar
 flare data sourced from DONKI, images sourced from SDO

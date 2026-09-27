@@ -232,17 +232,31 @@ function App() {
   var [{ flareID }, set] = useControls(() => ({ flareID:{ value:'2026-04-01T13:38:00-FLR-001', onChange: (v) => {}, transient: false} }));
   function cycle(direct){
   if (direct=="next"){
-    listnum=listnum+1;
-    set({ flareID: String(jsonData[listnum].flrID) })
-    // console.log("this is working though" + flareID);
+    if(listnum == jsonData.length - 1){
+      console.log("data does not exist past this point")
+    }
+    else{
+      listnum=listnum+1;
+      set({ flareID: String(jsonData[listnum].flrID) })
+    }
   }
   if (direct=="back"){
-    listnum=listnum-1;
+    if(listnum == 1){
+      console.log("data does not exist past this point")
+    }
+    else{
+      listnum=listnum-1;
+      set({ flareID: String(jsonData[listnum].flrID) })
+    }
+  }
+  if (direct=="now"){
+    listnum=jsonData.length - 1;
     set({ flareID: String(jsonData[listnum].flrID) })
-    // console.log("this is working though" + flareID);
-  }}
+  }
+  }
   const levaConfig = useControls({"next": button(() => cycle('next')),});
   const levaConfig2 = useControls({"previous": button(() => cycle('back')),});
+  const current = useControls({"Latest": button(() => cycle('now')),})
   for (var i = 0; i < jsonData.length; i++){
     if(jsonData[i].flrID == flareID){
       console.log("its:" + i)
@@ -300,15 +314,18 @@ function App() {
     <Leva oneLineLabels flat titleBar={false} theme={ levatheme }/>
     
       <div id='info'>
-        <h1>About Flareviewer</h1>
+        <h1>About FlareViewer</h1>
         <p>This website was made to display solar flares and magnetic field data. The half sphere shown represents the half of the sun that is visiable from earth during the timeframe specified. The bumps on the surface represent the magnetic field values taken from SDO magneteogram images, the raised parts are strong with a postive polarity and the lowered parts are a strong negative polarity. The orange sphere shows the active region of the selected solar flare. For a more in-depth explaination you can watch my presentation of the project this website was made for,</p>
         <a href='https://n3.sonoma.edu/internship/projects/2026/#:~:text=vivian%20e.'>presentation found at the bottom of this page</a>
+        <p>for more information on how the site works there is a <a href='https://github.com/vivian-fake/Magnetic-field-Flareviewer/'>Github repo</a></p>
         <p>images may take time to load so if the image isnt updating click one of the controls to cause it to reload</p>
-        <p>controls: the side menu allows you to edit the 3D model. The flare ID box displays the flare currently being viewed, this ID contains the date of the event. The ID's are the ones assigned within the DONKI database. If you dont want to search for direct ID's you can use the next and back buttons to cycle to the flare before or after the one you have currently selected. Displacement scale will change the intensity of the bumps on the sphere, click and drag the box to change it or type a value. Checking the box show previous active region will show a yellow sphere where the previous flare's active region was.</p>
+        <h1>Controls</h1>
+        <p>The side menu allows you to edit the 3D model. The "flare ID" box displays the flare currently being viewed, this ID contains the date of the event. The ID's are the ones assigned within the DONKI database. If you dont want to search for direct ID's you can use the "next","back", or "latest" buttons to cycle to the flare before or after the one you have currently selected. "Displacement scale" will change the intensity of the bumps on the sphere, type a value in the box to change it. Checking the box "show previous active region" will show a yellow sphere where the previous flare's active region was.</p>
         <p>click the help button to open and <a href="#" onClick={showhelp}>close this menu</a></p>
         <br></br>
-        <h2>webpage made by Vivian Eagar</h2>
-        <h2>flare data sourced from DONKI, images sourced from SDO</h2>
+        <h2>webpage made by Vivian Eagar as a part of NASA's <a href="https://n3.sonoma.edu/">N3(NASA Neurodiversity Network)</a> internship program</h2>
+        <h2><a href='https://kauai.ccmc.gsfc.nasa.gov/DONKI'>NASA DONKI "The Space Weather Database Of Notifications"</a> Source of flare time and location data</h2>
+        <h2><a href='https://sdo.gsfc.nasa.gov'>NASA SDO "Solar Dynamics Observatory"</a> Source of the HMI magnetogram JPEG used as the sun's surface texture.</h2>
       </div>
     
     </>
