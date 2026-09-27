@@ -3,7 +3,7 @@ displays magnetogram and flare active region
 
 ## About Flareviewer
 
-This website was made to display solar flares and magnetic field data. The half sphere shown represents the half of the sun that is visiable from earth during the timeframe specified. The bumps on the surface represent the magnetic field values taken from SDO magneteogram images, the raised parts are strong with a postive polarity and the lowered parts are a strong negative polarity. The orange sphere shows the active region of the selected solar flare. For a more in-depth explaination you can watch my presentation of the project this website was made for, [presentation found at the bottom of this page](https://n3.sonoma.edu/internship/projects/2026/#:~:text=vivian%20e.).
+The [Space Weather Flare Viewer website](https://n3.sonoma.edu/flareviewer/) was made to display solar flares and magnetic field data. The half sphere shown represents the half of the sun that is visiable from earth during the timeframe specified. The bumps on the surface represent the magnetic field values taken from SDO magneteogram images, the raised parts are strong with a postive polarity and the lowered parts are a strong negative polarity. The orange sphere shows the active region of the selected solar flare. For a more in-depth explaination you can watch my presentation of the project this website was made for, [presentation found at the bottom of this page](https://n3.sonoma.edu/internship/projects/2026/#:~:text=vivian%20e.).
 
 images may take time to load so if the image isnt updating click one of the controls to cause it to reload
 
